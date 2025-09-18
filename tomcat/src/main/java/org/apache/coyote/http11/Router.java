@@ -3,6 +3,7 @@ package org.apache.coyote.http11;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.catalina.controller.LoginController;
+import org.apache.catalina.controller.SlowController;
 import org.apache.coyote.http11.exception.CommonException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,7 @@ public class Router {
         // 라우트 등록
         controllers.put("/login", new LoginController());
         controllers.put("/register", new LoginController());
+        controllers.put("/slow", new SlowController());
     }
 
     public void handle(
@@ -25,7 +27,7 @@ public class Router {
             HttpResponse httpResponse
     ) throws Exception {
         try {
-    
+
             String uri = httpRequest.uri();
             Controller controller = findController(uri);
 
