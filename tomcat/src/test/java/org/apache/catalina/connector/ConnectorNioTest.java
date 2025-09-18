@@ -29,7 +29,7 @@ class ConnectorNioTest {
 
     @Test
     void testSlowControllerConcurrencyLimit() throws InterruptedException {
-        int[] threadCounts = {10, 30, 50, 100, 200};
+        int[] threadCounts = {300};
 
         for (int threads : threadCounts) {
             long start = System.currentTimeMillis();

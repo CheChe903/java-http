@@ -1,11 +1,10 @@
-package org.apache.coyote.http11;
+package org.apache.catalina.connector;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import org.apache.catalina.connector.Connector;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,7 +28,7 @@ class ConnectorBioTest {
 
     @Test
     void testSlowControllerConcurrencyLimit() throws InterruptedException {
-        int[] threadCounts = {10, 30, 50, 100, 200};
+        int[] threadCounts = {300};
 
         for (int threads : threadCounts) {
             long start = System.currentTimeMillis();

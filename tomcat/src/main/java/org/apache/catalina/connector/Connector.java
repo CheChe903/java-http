@@ -43,7 +43,7 @@ public class Connector implements Runnable {
                     thread.setDaemon(false);
                     return thread;
                 },
-                new ThreadPoolExecutor.CallerRunsPolicy()
+                new ThreadPoolExecutor.AbortPolicy()
         );
     }
 

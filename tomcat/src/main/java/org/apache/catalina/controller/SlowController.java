@@ -8,7 +8,7 @@ import org.apache.coyote.http11.HttpStatus;
 
 public class SlowController extends AbstractController {
 
-    private static final int SIZE = 100 * 1024 * 2048;
+    private static final int SIZE = 100 * 1024 * 512;
 
     @Override
     protected void doGet(HttpRequest req, HttpResponse res) throws IOException {
